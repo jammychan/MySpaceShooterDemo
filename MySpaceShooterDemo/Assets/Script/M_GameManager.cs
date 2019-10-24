@@ -10,11 +10,33 @@ public class M_GameManager : MonoBehaviour
     //public GameObject Enemy02;//生成的敌人预制体
     //public GameObject Enemy03;//生成的敌人预制体
 
+    public float startWait;	//开始的暂停时间
+    public float spawnWait;	//一批中，单个敌人生成的间隔时间
+    public float waveWait; //两批敌人之间的间隔时间
+    public int hazardCount;	//一批敌人的数量
+
     // Start is called before the first frame update
     void Start()
     {
-     
+        // 这是另一种生成小行星的办法。
+        //StartCoroutine(SpawnWaves());        
     }
+
+    //IEnumerator SpawnWaves()
+    //{
+    //    yield return new WaitForSeconds(startWait);
+    //    while (true)
+    //    {
+    //        for (int i=0; i<hazardCount; ++i)
+    //        {
+    //            Vector3 spawnPosition = new Vector3(Random.Range(-EnemySpawnPosition.position.x, EnemySpawnPosition.position.x), EnemySpawnPosition.position.y, EnemySpawnPosition.position.z);
+    //            Quaternion spawnQuaternion = Quaternion.identity;
+    //            Instantiate(Enemy01, spawnPosition, EnemySpawnPosition.rotation);
+    //            yield return new WaitForSeconds(spawnWait);
+    //        }
+    //        yield return new WaitForSeconds(waveWait);
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()

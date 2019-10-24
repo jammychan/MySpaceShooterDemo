@@ -21,6 +21,10 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         ExplosionAS = GetComponent<AudioSource>();
+
+        // 用代码 来控制Y不变。。。不过没效果。TODO
+        Rigidbody rigidbody = this.GetComponent<Rigidbody>();
+        rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
     }
 
     // Update is called once per frame

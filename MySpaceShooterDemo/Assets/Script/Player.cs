@@ -91,9 +91,9 @@ public class Player : MonoBehaviour
 
             Destroy(other.gameObject);//销毁敌人
 
-            //GameObject obj = Instantiate(PlayerExplosion, transform.position, Quaternion.identity);//生成爆炸物
-            //Destroy(obj, 0.3f);//销毁爆炸物
-            //Destroy(gameObject, 0.2f);//销毁自己
+            GameObject obj = Instantiate(PlayerExplosion, transform.position, Quaternion.identity);//生成爆炸物
+            Destroy(obj, 0.3f);//销毁爆炸物
+            Destroy(gameObject, 0.2f);//销毁自己
         }
     }
 }
