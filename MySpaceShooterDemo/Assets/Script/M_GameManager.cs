@@ -19,29 +19,30 @@ public class M_GameManager : MonoBehaviour
     void Start()
     {
         // 这是另一种生成小行星的办法。
-        //StartCoroutine(SpawnWaves());        
+        StartCoroutine(SpawnWaves());
     }
 
-    //IEnumerator SpawnWaves()
-    //{
-    //    yield return new WaitForSeconds(startWait);
-    //    while (true)
-    //    {
-    //        for (int i=0; i<hazardCount; ++i)
-    //        {
-    //            Vector3 spawnPosition = new Vector3(Random.Range(-EnemySpawnPosition.position.x, EnemySpawnPosition.position.x), EnemySpawnPosition.position.y, EnemySpawnPosition.position.z);
-    //            Quaternion spawnQuaternion = Quaternion.identity;
-    //            Instantiate(Enemy01, spawnPosition, EnemySpawnPosition.rotation);
-    //            yield return new WaitForSeconds(spawnWait);
-    //        }
-    //        yield return new WaitForSeconds(waveWait);
-    //    }
-    //}
+    IEnumerator SpawnWaves()
+    {
+        yield return new WaitForSeconds(startWait);
+        while (true)
+        {
+            for (int i = 0; i < hazardCount; ++i)
+            {
+                //Vector3 spawnPosition = new Vector3(Random.Range(-EnemySpawnPosition.position.x, EnemySpawnPosition.position.x), EnemySpawnPosition.position.y, EnemySpawnPosition.position.z);
+                Vector3 spawnPosition = new Vector3(GetRandomPos(-4, 4), 0, EnemySpawnPosition.position.z);
+                Quaternion spawnQuaternion = Quaternion.identity;
+                Instantiate(Enemy01, spawnPosition, EnemySpawnPosition.rotation);
+                yield return new WaitForSeconds(spawnWait);
+            }
+            yield return new WaitForSeconds(waveWait);
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        CreatEnemy();
+        //CreatEnemy();
     }
 
     private void CreatEnemy()//生成的方法

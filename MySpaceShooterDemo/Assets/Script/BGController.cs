@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGController : MonoBehaviour
 {
-    private float MoveSpeed = 0.5f;//背景移动速度
+    private float MoveSpeed = 2.5f;//背景移动速度
 
     // Start is called before the first frame update
     void Start()
